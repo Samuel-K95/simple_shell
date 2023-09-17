@@ -20,7 +20,12 @@ int main(void)
 	{
 		prompt();
 		line = read_input();
-		
+		/* tommorow task idea
+		 *separates string to get command and atgs
+	 	 * args = split_str(line, env);
+		 * executetion 
+		 * */
+
 		pid = fork();
 		if (pid == -1)
 		{
