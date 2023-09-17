@@ -1,5 +1,5 @@
-#ifndef SHELL_H
-#define SHELL_H
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -29,4 +29,4 @@ int execute_cmd(char **args, char **argv);
 void handle_signal(int signal);
 
 
-#endif /* SHELL_H */
+#endif /* MAIN_H */
