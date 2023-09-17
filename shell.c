@@ -1,5 +1,9 @@
 #include "main.h"
 
+/**
+ * main - driver function
+ * Return: 0
+ */
 
 int main(void)
 {
@@ -15,17 +19,16 @@ int main(void)
 		perror("malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-
 	while (1)
 	{
 		prompt();
 		line = read_input();
-		/* tommorow task idea
-		 *separates string to get command and atgs
-	 	 * args = split_str(line, env);
-		 * executetion 
-		 * */
-
+		/**
+		 * tommorow task idea
+		 * separates string to get command and atgs
+		 * args = split_str(line, env);
+		 * executetion
+		 */
 		pid = fork();
 		if (pid == -1)
 		{
@@ -43,6 +46,5 @@ int main(void)
 		wait(&status);
 	}
 	free(line);
-
-	return(0);
+	return (0);
 }
