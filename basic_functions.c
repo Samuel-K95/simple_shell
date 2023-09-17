@@ -1,44 +1,38 @@
-#include "shell.h"
+#include "main.h"
 
 /**
- * _strlen - calculate the length of a string.
- *
- * @s: the string to calculate it's length.
- * Return: length of a string.
+ * _strlen - returns a string
+ * @s: integer to be used
+ * Return: length of string
  */
-
-int _strlen(char *s)
+int _strlen(const char *s)
 {
 	int i;
-	int length = 0;
 
-	for (i = 0; s[i] != '\0'; i++)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		length++;
+		i++;
 	}
-
-	return (length);
+	return ((i + 1));
 }
-
 
 /**
- * *_strcpy - copies the string pointed to by src, including \0.
- *@src: pointer.
- *@dest: pointer.
- *Return: the pointer to dest.
+ * *_strcpy - copies a string pointed to by src to dest
+ * @src: variale where string will be copied from
+ * @dest: variable that string will be copied to
+ * Return: dest
  */
-
 char *_strcpy(char *dest, char *src)
 {
-	int i, length;
+	int p;
 
-	for (length = 0; src[length] != '\0'; length++)
+	for (p = 0; src[p] != '\0'; p++)
 	{
+		dest[p] = src[p];
 	}
+	dest[p] = '\0';
 
-	for (i = 0; i <= length ; i++)
-	{
-		dest[i] = src[i];
-	}
 	return (dest);
 }
+
