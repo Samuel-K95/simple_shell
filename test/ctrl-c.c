@@ -1,6 +1,10 @@
 #include "main.h"
 
-/*  to handle the CTRL + C  signal */
+/**
+ * handle_signal - handles EOF signal
+ * @signal: EOF indicator
+ * Return: void
+ */
 
 void handle_signal(int signal)
 {
