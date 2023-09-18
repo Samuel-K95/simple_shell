@@ -19,7 +19,7 @@ int main(void)
 		perror("malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-	while (1)
+	for (;1;)
 	{
 		prompt();
 		line = read_input();

@@ -36,3 +36,22 @@ char *_strcpy(char *dest, char *src)
 	return (dest);
 }
 
+/**
+ * _memcpy - copies bytes from src to dest
+ *
+ * @dest: memory to be transfereed to
+ * @src: memory to be transferred from
+ * @n: number of bytes to be transfered
+ * Return:dest
+ */
+char *_memcpy(char *dest, char *src, unsigned int n)
+{
+	int i;
+	for (i = 0; n > 0; i++)
+	{
+		dest[i] = src[i];
+		n--;
+	}
+
+	return (dest);
+}
