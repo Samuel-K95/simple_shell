@@ -11,6 +11,7 @@
 #include <fcntl.h>
 #include <sys/wait.h>
 
+#define UNUSED __attribute__((unused));
 /* basic functions  */
 int _putchar(char c);
 void prints(char *str);

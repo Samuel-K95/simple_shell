@@ -55,3 +55,35 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 
 	return (dest);
 }
+
+/**
+ * _strdup - copies string and returns its pointer
+ *
+ * @str: string to be copied
+ * Return: String
+ */
+
+char *_strdup(char *str)
+{
+	char *dup;
+	unsigned int i, count;
+
+	i = 0;
+	count = 0;
+	if (str == NULL)
+		return (NULL);
+	while (str[i] != '\0')
+	{
+		i++;
+		count++;
+	}
+	count++;
+	dup = malloc(sizeof(char) * count);
+	if (dup == NULL)
+		return (NULL);
+	for (i = 0; i <sizeof(char) * count; i++)
+		dup[i] = str[i];
+
+	return (dup);
+}
+
