@@ -19,7 +19,7 @@ int main(void)
 		perror("malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-	for (;1;)
+	for (; 1;)
 	{
 		prompt();
 		line = read_input();
@@ -40,7 +40,7 @@ int main(void)
 			args[0] = line;
 			args[1] = NULL;
 			execve(line, args, NULL);
-			prints("./shell: No such file or directory\n");
+			erints("./shell: No such file or directory\n");
 			_exit(EXIT_FAILURE);
 		}
 		wait(&status);
