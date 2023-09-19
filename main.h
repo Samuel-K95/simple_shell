@@ -28,6 +28,7 @@ char **split_str(char *line);
 void prompt(void);
 char *read_input(void);
 int execute_cmd(char **args, char **argv);
+void shell_mezgat(void);
 
 
 /*signal */
