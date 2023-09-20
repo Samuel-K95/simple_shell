@@ -26,7 +26,7 @@ char *_memcpy(char *dest, char *src, unsigned int n);
 
 char **split_str(char *line);
 void prompt(void);
-char *read_input(void);
+char *read_input(int mestegabir);
 int execute_cmd(char **av, char **args, char **env, int yemain_huneta);
 void shell_mezgat(void);
 

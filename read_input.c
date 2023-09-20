@@ -5,24 +5,34 @@
  * Return: string
  */
 
-char *read_input(void)
+char *read_input(int mestegabir)
 {
 	char *line = NULL;
-	size_t buf_size;
+	size_t buf_size = 0;
 	int bytes_read;
 
-	bytes_read = getline(&line, &buf_size, stdin);
 
-	if (bytes_read == 1)
+	if (mestegabir == 1)
 	{
-		free(line);
-		return (NULL);
+		if (getline(&line, &buf_size, stdin) == -1)	
+			exit(1);
 	}
-	else if (bytes_read == EOF)
+	else
 	{
-		prints("\n");
-		free(line);
-		exit(0);
+
+		bytes_read = getline(&line, &buf_size, stdin);
+
+		if (bytes_read == 1)
+		{
+			free(line);
+			return (NULL);
+		}
+		else if (bytes_read == EOF)
+		{
+			prints("\n");
+			free(line);
+			exit(0);
+		}
 	}
 
 	return (line);
