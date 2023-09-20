@@ -6,6 +6,6 @@
  */
 void prompt(void)
 {
-	prints("#cisfun$ ");
+	prints("");
 	fflush(stdout);
 }
