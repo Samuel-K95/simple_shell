@@ -20,13 +20,13 @@ int main(int ac __attribute__((unused)), char **av, char **env)
         {
                 prompt();
                 line = read_input();
-                args = split_str(line, env);
+                args = split_str(line);
 
                 if ((_strcmp(args[0], "\n") != 0) && (_strcmp(args[0], "env") != 0))
                 {
                         kotari++;
                         yemejemeryaw_arg_info = stat(args, env);
-                        execute_cmd(av, args, env, yemejemeryaw_arg_info, kotari);
+                        execute_cmd(av, args, env, yemejemeryaw_arg_info);/* removed kotar */
                 }
                 else
                 {

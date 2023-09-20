@@ -24,7 +24,7 @@ char *_strdup(char *str);
 char *_memcpy(char *dest, char *src, unsigned int n);
 /*essential functions */
 
-char **split_str(char *line, char **env);
+char **split_str(char *line);
 void prompt(void);
 char *read_input(void);
 int execute_cmd(char **av, char **args, char **env, int yemain_huneta);
