@@ -10,7 +10,7 @@
  *
  * Return: 1 on success
  */
-int execute_cmd(char **av, char **args, char **env, int yemain_huneta)
+int execute_cmd(char **av, char *args[], char **env, int yemain_huneta)
 {
         pid_t pid;
         int status;

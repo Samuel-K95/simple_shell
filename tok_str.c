@@ -8,12 +8,12 @@
 
 char **split_str(char *line)
 {
-	char *tokenized_sentence, *separator = " ";
+	char *tokenized_sentence, *separator = " \t\n";
 	char **kalat;
-	int max_tokens = 10, kotari = 0;
+	int max_kalat = 10, kotari = 0;
+	
 
-	kalat = _calloc(sizeof(char *), max_tokens);
-
+	kalat = _calloc(sizeof(char *), max_kalat);
 	if (kalat == NULL)
 	{
 		prints("error\n");
