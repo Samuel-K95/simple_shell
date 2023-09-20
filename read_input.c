@@ -8,15 +8,21 @@
 char *read_input(void)
 {
 	char *line = NULL;
-	size_t buf_size = 100;
+	size_t buf_size;
 	int bytes_read;
 
 	bytes_read = getline(&line, &buf_size, stdin);
-	line[bytes_read - 1] = '\0';
-	if (bytes_read == -1)
+
+	if (bytes_read == 1)
 	{
-		prints("getline failed\n");
-		_exit(EXIT_FAILURE);
+		free(line);
+		return (NULL);
+	}
+	else if (bytes_read == EOF)
+	{
+		prints("\n");
+		free(line);
+		exit(0);
 	}
 
 	return (line);

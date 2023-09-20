@@ -3,10 +3,12 @@
 
 /**
  * shell_mezgat - closes the shell
- * Return: void
+ * Return: 0
  */
 
 int  shell_mezgat(void)
 {
-	return (-1);
+	(void) args;
+	exit(0);
 }
+

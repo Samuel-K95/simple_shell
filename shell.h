@@ -21,16 +21,16 @@ int _strlen(const char *s);
 int _strcmp(char *s1, char *s2);
 char *_strstr(char *str1, char *str2);
 char *_strdup(char *str);
-char **_memcpy(char **dest, char **src, unsigned int n);
-char *_strchr(char *s, char c);
+char *_memcpy(char *dest, char *src, unsigned int n);
 char *str_concat(char *s1, char *s2);
 /*essential functions */
 
 char **split_str(char *line);
 void prompt(void);
 char *read_input(void);
-void  execute_cmd(char **args);
-void try_comm_exec(char *mesmer);
+int execute_cmd(char **args);
+
+
 /*signal */
 void handle_signal(int signal);
 

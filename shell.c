@@ -24,6 +24,7 @@ int main(void)
 			mezgat_flag = shell_mezgat();
 		else
 		{
+<<<<<<< HEAD
 			prompt();
 			line = read_input();
 			pid = fork();
@@ -45,6 +46,13 @@ int main(void)
 				}
 			}
 			wait(&status);
+=======
+			args[0] = line;
+			args[1] = NULL;
+			execve(line, args, NULL);
+			prints("./shell: No such file or directory\n");
+			_exit(EXIT_FAILURE);
+>>>>>>> 58d78d48a7e5ddd320fadddc92e1e2a1626dc9f2
 		}
 	}
 	free(line);
