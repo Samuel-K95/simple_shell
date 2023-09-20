@@ -20,7 +20,7 @@ int main(void)
 	}
 	for (; mezgat_flag != -1;)
 	{
-		if (strcmp(line, "exit") == 0)
+		if (_strcmp(line, "exit") == 0)
 			mezgat_flag = shell_mezgat();
 		else
 		{
