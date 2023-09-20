@@ -26,7 +26,7 @@ int main(int ac __attribute__((unused)), char **av, char **env)
                 {
                         kotari++;
                         yemejemryaw_arg_info = stat(args, env);
-                        child_process(av, args, env, yemejemeryaw_arg_info, kotari);
+                        execute_cmd(av, args, env, yemejemeryaw_arg_info, kotari);
                 }
                 else
                 {

@@ -27,7 +27,7 @@ char *_memcpy(char *dest, char *src, unsigned int n);
 char **split_str(char *line);
 void prompt(void);
 char *read_input(void);
-int child_process(char **av, char **args, char **env, int yemain_huneta, int kotari);
+int execute_cmd(char **av, char **args, char **env, int yemain_huneta, int kotari);
 void shell_mezgat(void);
 
 
