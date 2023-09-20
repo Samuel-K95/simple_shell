@@ -19,7 +19,7 @@ int main(int ac __attribute__((unused)), char **av, char **env)
 
         for (;;)
         {
-		mestegabir = isatty(STDIN_FILENO);
+		mestegabir = isatty(0);
                 prompt();
                 line = read_input(mestegabir);
                 args = split_str(line);
