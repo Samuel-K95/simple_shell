@@ -34,5 +34,7 @@ void shell_mezgat(void);
 /*signal */
 void handle_signal(int signal);
 
+/*memory */
+void *_calloc(unsigned int nmemb, unsigned int size);
 
 #endif /* MAIN_H */

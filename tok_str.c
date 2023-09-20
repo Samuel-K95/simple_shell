@@ -27,7 +27,7 @@ char **split_str(char *line)
 		kotari++;
 		tokenized_sentence = strtok(NULL, separator);
 	}
-	if (kotari[0] == NULL)
+	if (kalat[0] == NULL)
 		kalat[kotari] = "\n";
 
 	/*implement exit condition */
