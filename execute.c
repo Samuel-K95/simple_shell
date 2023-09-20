@@ -10,7 +10,7 @@
  *
  * Return: 1 on success
  */
-int execute_cmd(char **av, char **args, char **env, int yemain_huneta, int kotari)
+int execute_cmd(char **av, char **args, char **env, int yemain_huneta)
 {
         pid_t pid;
         int status;
@@ -28,7 +28,7 @@ int execute_cmd(char **av, char **args, char **env, int yemain_huneta, int kotar
         {
                 if (execve(args[0], args, env) == -1)
                 {
-                        error(av[0], kotari, args[0]);
+                        perror(av[0]);
                         free(args);
                         exit(1);
                 }

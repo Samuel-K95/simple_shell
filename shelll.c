@@ -25,7 +25,7 @@ int main(int ac __attribute__((unused)), char **av, char **env)
                 if ((_strcmp(args[0], "\n") != 0) && (_strcmp(args[0], "env") != 0))
                 {
                         kotari++;
-                        yemejemryaw_arg_info = stat(args, env);
+                        yemejemeryaw_arg_info = stat(args, env);
                         execute_cmd(av, args, env, yemejemeryaw_arg_info, kotari);
                 }
                 else

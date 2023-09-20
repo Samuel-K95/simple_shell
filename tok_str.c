@@ -6,7 +6,7 @@
  * Return: line of string
  */
 
-char **split_str(char *line)
+char **split_str(char *line, char **env)
 {
 	char *tokenized_sentence, *separator = " ";
 	char **kalat;

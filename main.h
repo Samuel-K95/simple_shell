@@ -24,10 +24,10 @@ char *_strdup(char *str);
 char *_memcpy(char *dest, char *src, unsigned int n);
 /*essential functions */
 
-char **split_str(char *line);
+char **split_str(char *line, char **env);
 void prompt(void);
 char *read_input(void);
-int execute_cmd(char **av, char **args, char **env, int yemain_huneta, int kotari);
+int execute_cmd(char **av, char **args, char **env, int yemain_huneta);
 void shell_mezgat(void);
 
 
