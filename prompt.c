@@ -6,6 +6,6 @@
  */
 void prompt(void)
 {
-	prints("$ ");
+	prints("$");
 	fflush(stdout);
 }
