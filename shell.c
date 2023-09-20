@@ -40,7 +40,7 @@ int main(void)
 			args[0] = line;
 			args[1] = NULL;
 			execve(line, args, NULL);
-			erints("./shell: No such file or directory\n");
+			prints("./shell: No such file or directory\n");
 			_exit(EXIT_FAILURE);
 		}
 		wait(&status);
