@@ -6,7 +6,7 @@
  * Return: void
  */
 
-void shell_mezgat(void)
+int  shell_mezgat(void)
 {
-	exit(0);
+	return (-1);
 }
