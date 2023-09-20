@@ -21,7 +21,7 @@ int main(int ac __attribute__((unused)), char **av, char **env)
         {
                 prompt();
                 line = read_input();
-                args = split_str(line);
+                args = split_str(line, env);
 
                 if ((_strcmp(args[0], "\n") != 0) && (_strcmp(args[0], "env") != 0))
                 {

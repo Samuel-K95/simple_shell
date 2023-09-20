@@ -9,7 +9,7 @@ char *read_input(void)
 {
 	char *line = NULL;
 	size_t buf_size;
-	int bytes_read;
+	int bytes_read, i = 0;
 
 	bytes_read = getline(&line, &buf_size, stdin);
 
@@ -20,10 +20,24 @@ char *read_input(void)
 	}
 	else if (bytes_read == EOF)
 	{
-		prints("\n");
+		if (isatty(STDIN_FILENO))
+			prints("\n");
 		free(line);
 		exit(0);
 	}
+	else
+	{
+		while (line[i] == ' ' && line[i + 1] == ' ')
+		{
+			i++;
+		}
+
+		if (!line[i] && line[i + 1] == '\n')
+		{
+			free(line);
+			return 0;
+		}
+	}	
 
 	return (line);
 

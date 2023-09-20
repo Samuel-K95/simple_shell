@@ -6,6 +6,11 @@
  */
 void prompt(void)
 {
-	prints("$ ");
-	fflush(stdout);
+	char *buffer = getcwd(NULL, 0);
+
+	if (isatty(STDIN_FILENO))
+	{
+		 prints("$ ");
+	}
+	free(buffer);
 }

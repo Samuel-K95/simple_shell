@@ -26,3 +26,20 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	return (p);
 
 }
+
+/**
+ *_puts - prints a string
+ *@str: A to be printed
+ *
+ *Return: void
+ */
+void _puts(char *str)
+{
+	int i;
+
+	for (i = 0 ; str[i] != '\0' ; i++)
+	{
+		_putchar(str[i]);
+	}
+	_putchar('\n');
+}
