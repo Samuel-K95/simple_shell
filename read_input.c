@@ -21,7 +21,8 @@ char *read_input(int mestegabir)
 	{
 
 		bytes_read = getline(&line, &buf_size, stdin);
-
+		if (_strcmp(line, "exit") == 0)
+			return (line);
 		if (bytes_read == 1)
 		{
 			free(line);
