@@ -10,37 +10,39 @@
  *
  * Return: 1 on success
  */
-int execute_cmd(char **av, char *args[], char **env, int yemain_huneta)
+
+int execute_cmd(char **av, char **args, char **env, int yemain_huneta, int kotari)
 {
-        pid_t pid;
-        int status;
+	pid_t pid;
+	int status;
 
-        if (args == NULL)
-                return (-1);
+	if (args == NULL)
+		return (-1);
 
-        pid = fork();
-        if (pid < 0)
-        {
-                perror("./shell: ");
-                exit(1);
-        }
-        else if (pid == 0)
-        {
-                if (execve(args[0], args, env) == -1)
-                {
-                        perror(av[0]);
-                        free(args);
-                        exit(1);
-                }
-                exit(0);
-        }
-        else
-        {
-                if (yemain_huneta == 1)
-                        free(args[0]);
+	pid = fork();
+	if (pid  < 0)
+	{
+		perror("./hsh: ");
+		exit(1);
+	}
+	else if (pid == 0)
+	{
+		if (execve(args[0], args, env) == -1)
+		{
+			_error(av[0], kotari, args[0]);
+			free(args);
+			exit(1);
+		}
+		exit(0);
+	}
+	else
+	{
+		if (yemain_huneta == 1)
+			free(args[0]);
 
-                free(args);
-                waitpid(pid, &status, WUNTRACED);
-        }
-        return (1);
+		free(args);
+		waitpid(pid, &status, WUNTRACED);
+	}
+	return (1);
 }
+      

@@ -14,6 +14,10 @@ char **split_str(char *line, char **env)
 	int max_kalat = 10, kotari = 0;
 
 	kalat = _calloc(sizeof(char *), max_kalat);
+	if (line == NULL)
+	{
+		return (0);
+	}
 	if (kalat == NULL)
 	{
 		printf("error\n");
