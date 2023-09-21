@@ -45,58 +45,58 @@ void _puts(char *str)
 }
 
 /**
- * search_path - gets the path to execute commands
+ * search - gets the path to execute commands
  * @environ: Environment variable
- * Return: kalat_path (array of directories containing the command) or NULL on failure
+ * Return: kalat_path (array of directories containing the command)
+ *	or NULL on failure
  **/
 char **search(char **environ)
 {
-    int position = 0;
-    char **kalat_path;
+	int position = 0;
+	char **kalat_path;
 
-    for (; environ[position] != NULL ; position++)
-    {
-        if (environ[position][0] == 'P' && environ[position][2] == 'T')
-        {
-            kalat_path = _which(environ[position]);
-        }
-    }
-    return (kalat_path);
+	for (; environ[position] != NULL ; position++)
+	{
+		if (environ[position][0] == 'P' && environ[position][2] == 'T')
+		{
+			kalat_path = _which(environ[position]);
+		}
+	}
+	return (kalat_path);
 }
 
 /**
  * _itoa - converts an integer to ASCII
  * @num: number
  * @base: base
+ * reference: geeksforgeeks
  * Return: character string
  **/
 char *_itoa(int num, int base)
 {
-    static char *digits = "0123456789abcdef";
-    static char buffer[50];
-    char sign = 0;
-    char *ptr;
-    unsigned long n = (unsigned long)num;
+	static char *digits = "0123456789abcdef";
+	static char buffer[50];
+	char sign = 0;
+	char *ptr;
+	unsigned long n = (unsigned long)num;
 
-    if (num < 0)
-    {
-        n = (unsigned long)(-num);
-        sign = '-';
-    }
+	if (num < 0)
+	{
+		n = (unsigned long)(-num);
+		sign = '-';
+	}
 
-    ptr = &buffer[49];
-    *ptr = '\0';
+	ptr = &buffer[49];
+	*ptr = '\0';
+	do {
+		*--ptr = digits[n % base];
+		n /= base;
+	} while (n != 0);
 
-    do
-    {
-        *--ptr = digits[n % base];
-        n /= base;
-    } while (n != 0);
+	if (sign)
+		*--ptr = sign;
 
-    if (sign)
-        *--ptr = sign;
-
-    return (ptr);
+	return (ptr);
 }
 
 /**
@@ -108,37 +108,39 @@ char *_itoa(int num, int base)
  */
 char *str_concat(char *s1, char *s2)
 {
-        char *dest;
-        unsigned int i, j, size;
+	char *dest;
+	unsigned int i, j, size;
 
-        /* If the array is empty */
-        if (s1 == NULL)
-                s1 = "";
+	/* If the array is empty */
+	if (s1 == NULL)
+		s1 = "";
 
-        if (s2 == NULL)
-                s2 = "";
+	if (s2 == NULL)
+		s2 = "";
+	/* Count total size */
 
-        /* Count total size */
-        size = (_strlen(s1) + _strlen(s2) + 1);
+	size = (_strlen(s1) + _strlen(s2) + 1);
 
-        /* Allocate memory */
-        dest = (char *) malloc(size * sizeof(char));
+	/* Allocate memory */
 
-        if (dest == 0)
-        {
-                return (NULL);
-        }
+	dest = (char *) malloc(size * sizeof(char));
 
-        /* Concatenate arrays */
-        for (i = 0; *(s1 + i) != '\0'; i++)
-                *(dest + i) = *(s1 + i);
+	if (dest == 0)
+	{
+		return (NULL);
+	}
 
-        for (j = 0; *(s2 + j) != '\0'; j++)
-        {
-                *(dest + i) = *(s2 + j);
-                i++;
-        }
-        dest[i] = '\0';
+	/* Concatenate arrays */
+	for (i = 0; *(s1 + i) != '\0'; i++)
+		*(dest + i) = *(s1 + i);
 
-        return (dest);
+	for (j = 0; *(s2 + j) != '\0'; j++)
+	{
+		*(dest + i) = *(s2 + j);
+		i++;
+
+	}
+	dest[i] = '\0';
+	return (dest);
+
 }

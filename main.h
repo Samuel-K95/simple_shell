@@ -12,7 +12,6 @@
 #include <sys/wait.h>
 extern char **environ;
 
-#define UNUSED __attribute__((unused));
 /* basic functions  */
 int _putchar(char c);
 void prints(char *str);
@@ -32,11 +31,15 @@ char *read_input();
 void shell_mezgat(void);
 void printenv(char **environ);
 void _puts(char *str);
+
 /*process */
-int execute_cmd(char **av, char **args, char **environ, int yemain_huneta, int kotari);
+
+int execute_cmd(char **av, char **args, char **environ, int ymh, int kotari);
 char **search(char **environ);
 char **_which(char *fpath);
+
 /*signal */
+
 void handle_signal(int signal);
 int _stat(char **cmd, char **menged);
 int *_error(char *argv, int count, char *args);
