@@ -10,6 +10,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <sys/wait.h>
+extern char **environ;
 
 #define UNUSED __attribute__((unused));
 /* basic functions  */
