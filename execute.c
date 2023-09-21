@@ -5,7 +5,7 @@
  * @av: array of arguments
  * @args: array of parsed arguments
  * @env: environment variables
- * @yemain_huneta: status of the main function
+ * @ymh: status of the main function
  * @kotari: command count
  *
  * Return: 1 on success
@@ -37,7 +37,7 @@ int execute_cmd(char **av, char **args, char **env, int ymh, int kotari)
 	}
 	else
 	{
-		if (yemain_huneta == 1)
+		if (ymh == 1)
 			free(args[0]);
 
 		free(args);
@@ -45,4 +45,4 @@ int execute_cmd(char **av, char **args, char **env, int ymh, int kotari)
 	}
 	return (1);
 }
-      
+
