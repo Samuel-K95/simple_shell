@@ -10,7 +10,7 @@ void prompt(void)
 
 	if (isatty(STDIN_FILENO))
 	{
-		 prints("$ ");
+		prints("$ ");
 	}
 	free(buffer);
 }

@@ -25,7 +25,7 @@ char *read_input(void)
 	}
 	else if (bytes_read == EOF)
 	{
-	       	if (isatty(STDIN_FILENO))
+		if (isatty(STDIN_FILENO))
 			write(STDOUT_FILENO, "\n", 1);
 		free(line);
 		exit(0);
@@ -40,6 +40,6 @@ char *read_input(void)
 			return (0);
 		}
 	}
-	
+
 	return (line);
 }
