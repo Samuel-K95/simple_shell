@@ -10,7 +10,7 @@
  */
 int main(int ac __attribute__((unused)), char **av, char **env)
 {
-    char *line;
+	char *line;
     char **args, **path;
     int kotari = 0, huneta = 0;
 
