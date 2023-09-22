@@ -11,23 +11,23 @@ char **split_str(char *line, char **env)
 {
 	char *tokenized_sentence, *separator = " \t\r\n\a";
 	char **kalat;
-	int max_kalat = 10, kotari = 0;
+	int max_kalat = 64, kotari = 0;
 
-	kalat = _calloc(sizeof(char *), max_kalat);
 	if (line == NULL)
 	{
 		return (0);
 	}
+	kalat = _calloc(sizeof(char *), max_kalat);
 	if (kalat == NULL)
 	{
-		printf("error\n");
+		prints("error");
 		exit(EXIT_FAILURE);
 	}
 
 	tokenized_sentence = strtok(line, separator);
 	while (tokenized_sentence != NULL)
 	{
-		kalat[kotari] = _strdup(tokenized_sentence);
+		kalat[kotari] = tokenized_sentence;
 		kotari++;
 		tokenized_sentence = strtok(NULL, separator);
 	}
