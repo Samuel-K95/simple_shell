@@ -9,9 +9,10 @@ char *read_input(void)
 {
 	char *line = NULL;
 	ssize_t bytes_read;
-	size_t bufsize = 0;
+	size_t bufsize;
 	int i;
 
+	bufsize = 0;
 	bytes_read = getline(&line, &bufsize, stdin);
 	if (!line)
 	{
@@ -32,8 +33,7 @@ char *read_input(void)
 	}
 	else
 	{
-		for (i = 0; line[i] == ' ' && line[i + 1] == ' '; i++)
-			;
+		for (i = 0; line[i] == ' ' && line[i + 1] == ' '; i++);
 		if (!line[i] && line[i + 1] == '\n')
 		{
 			free(line);
