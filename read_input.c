@@ -33,7 +33,8 @@ char *read_input(void)
 	}
 	else
 	{
-		for (i = 0; line[i] == ' ' && line[i + 1] == ' '; i++);
+		for (i = 0; line[i] == ' ' && line[i + 1] == ' '; i++)
+			;
 		if (!line[i] && line[i + 1] == '\n')
 		{
 			free(line);
