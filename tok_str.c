@@ -42,6 +42,12 @@ char **split_str(char *line, char **env)
 		free(kalat);
 		exit(status);
 	}
+	else if (_strcmp(kalat[0], "exit") == 0)
+	{
+		free(line);
+		free(kalat);
+		exit(0);
+}
 
 	if ((_strcmp(kalat[0], "env") == 0) && kalat[1] == NULL)
 		printenv(env);
