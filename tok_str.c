@@ -67,7 +67,7 @@ void handle_exit(char **kalat, char *line)
 
 	if (kalat[1] != NULL)
 	{
-		status = atoi(kalat[1]);
+		status = _atoi(kalat[1]);
 		if (status == 0 && _strcmp(kalat[1], "0") != 0)
 			status = 2;
 	}
@@ -75,4 +75,36 @@ void handle_exit(char **kalat, char *line)
 	free(line);
 	free(kalat);
 	exit(status);
+}
+
+/**
+ * _atoi - converts char to int
+ * @a: char to be converted
+ * Return: int
+ */
+
+int _atoi(char *a)
+{
+	int result = 0;
+	int sign = 1;
+	int i = 0;
+
+	while (a[i] == ' ')
+	{
+		i++;
+	}
+
+	if (a[i] == '-' || a[i] == '+')
+	{
+		sign = (a[i] == '-') ? -1 : 1;
+		i++;
+	}
+
+	while (a[i] > '\0' && a[i] <= '9')
+	{
+		result = result * 10 + (a[i] - '0');
+		i++;
+	}
+
+	return (result * sign);
 }

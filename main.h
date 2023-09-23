@@ -23,6 +23,7 @@ char *_strstr(char *str1, char *str2);
 char *_strdup(char *str);
 char *_memcpy(char *dest, char *src, unsigned int n);
 char *_itoa(int num, int base);
+int _atoi(char *a);
 /*essential functions */
 
 char **split_str(char *line, char **env);
