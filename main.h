@@ -28,7 +28,6 @@ char *_itoa(int num, int base);
 char **split_str(char *line, char **env);
 void prompt(void);
 char *read_input();
-void shell_mezgat(void);
 void printenv(char **environ);
 void _puts(char *str);
 

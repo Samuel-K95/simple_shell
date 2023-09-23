@@ -15,17 +15,17 @@ char **_which(char *fpath)
 	char *delim = ":=";
 
 	char **dirs = _calloc(sizeof(char *), size);
-	char *token;
+	char *token = NULL;
 
 	if (fpath == NULL)
 	{
 		free(fpath);
-		return (NULL);
+		return (0);
 	}
 	if (dirs == NULL)
 	{
 		free(fpath);
-		perror("Error allocating memory");
+		perror("Error allocated memory");
 		return (NULL);
 	}
 	copy_path = _strdup(fpath); /* Copy the fpath string */

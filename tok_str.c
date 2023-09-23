@@ -11,7 +11,7 @@ char **split_str(char *line, char **env)
 {
 	char *tokenized_sentence, *separator = " \t\r\n\a";
 	char **kalat;
-	int max_kalat = 64, kotari = 0;
+	int max_kalat = 64, kotari = 0, status;
 
 	if (line == NULL)
 	{
@@ -35,15 +35,17 @@ char **split_str(char *line, char **env)
 	if (kalat[0] == NULL)
 		kalat[kotari] = "\n";
 
-	if ((_strcmp(kalat[0], "exit") == 0) && kalat[1] == NULL)
+	if ((_strcmp(kalat[0], "exit") == 0) && kalat[1] != NULL)
 	{
+		status = atoi(kalat[1]);
 		free(line);
 		free(kalat);
-		exit(0);
+		exit(status);
 	}
 
 	if ((_strcmp(kalat[0], "env") == 0) && kalat[1] == NULL)
 		printenv(env);
 
 	return (kalat);
+
 }
