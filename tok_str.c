@@ -66,7 +66,12 @@ void handle_exit(char **kalat, char *line)
 	int status = 0;
 
 	if (kalat[1] != NULL)
+	{
 		status = atoi(kalat[1]);
+		if (status == 0 && _strcmp(kalat[1], "0") != 0)
+			status = 2;
+	}
+
 	free(line);
 	free(kalat);
 	exit(status);
